@@ -7,7 +7,6 @@
 #include <queue>
 #include <unordered_set>
 
-
 using namespace std;
  
 // templates from Willian Lin:  https://github.com/tmwilliamlin168/CompetitiveProgramming/blob/master/Templates/Main.cpp
@@ -39,8 +38,8 @@ mt19937_64 rng(std::chrono::steady_clock::now().time_since_epoch().count());
 
  
 //const lld pi = 3.14159265358979323846;
-// const ll mod = 1000000007;
-// const ll mod = 998244353;
+//const ll mod = 1000000007;
+//const ll mod = 998244353;
 // ll mod;
  
  
@@ -56,7 +55,7 @@ ll ans = 0;
  
  
 void solve(int tc = 0) {
-	
+	cout << "test";
 
     
 
@@ -70,9 +69,9 @@ void solve(int tc = 0) {
 }//end solve
  
 int main() {
-	#ifdef galen_colin_local
-		auto begin = std::chrono::high_resolution_clock::now();
-	#endif
+	
+	auto begin = std::chrono::high_resolution_clock::now();
+	
 	
 	send help
  
@@ -86,11 +85,11 @@ int main() {
 	cin >> tc;
 	for (int t = 0; t < tc; t++) solve(t);
 	
-	#ifdef galen_colin_local
-		auto end = std::chrono::high_resolution_clock::now();
-		cerr << setprecision(4) << fixed;
-		cerr << "Execution time: " << std::chrono::duration_cast<std::chrono::duration<double>>(end - begin).count() << " seconds" << endl;
-	#endif
+	
+	auto end = std::chrono::high_resolution_clock::now();
+	cerr << setprecision(4) << fixed;
+	cerr << "Execution time: " << std::chrono::duration_cast<std::chrono::duration<double>>(end - begin).count() << " seconds" << endl;
+	
 }//end main
 
 
