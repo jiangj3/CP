@@ -1,12 +1,12 @@
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 #include <iostream>
-#include<vector>
-#include<string>
-#include<algorithm>
-#include<unordered_map>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <unordered_map>
 #include <queue>
 #include <unordered_set>
-
+#include <cmath>
 
 using namespace std;
  
@@ -25,6 +25,10 @@ using namespace std;
 #define FOR(...) F_ORC(__VA_ARGS__)(__VA_ARGS__)
 #define EACH(x, a) for (auto& x: a)
 #define getunique(v) {sort(v.begin(), v.end()); v.erase(unique(v.begin(), v.end()), v.end());}
+#define SUM(a) accumulate(a.begin(), a.end(), 0)
+// #define min(a,b) ((a)<(b)?(a):(b))
+// #define max(a,b) ((a)>(b)?(a):(b))
+
 typedef long long ll;
 typedef long double lld;
 typedef unsigned long long ull;
@@ -39,8 +43,8 @@ mt19937_64 rng(std::chrono::steady_clock::now().time_since_epoch().count());
 
  
 //const lld pi = 3.14159265358979323846;
-// const ll mod = 1000000007;
-// const ll mod = 998244353;
+//const ll mod = 1000000007;
+//const ll mod = 998244353;
 // ll mod;
  
  
@@ -52,44 +56,26 @@ ll b[template_array_size];
 ll c[template_array_size];
 string s, t;
 ll ans = 0;	
- 
+
+
  
  
 void solve(int tc = 0) {
 	int n;
-    int x;
-    int ans;
-
     cin >> n;
-    vector<int> v;
-    
-    FOR(n){
-        cin >> x;
-        v.push_back(x);
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin >> arr[i];
     }
 
-    for(int i=0;i<(n-2); i++){
-        if(v[i]==v[i+1] && v[i+1] != v[i+2]){
-            ans= i+3;
-            break;
+    for(auto x: arr){
+        if(sqrt(x) != ceil(sqrt(x))){
+            cout << "YES" << '\n';
+            return;
         }
 
-        else if(v[i]==v[i+2] && v[i+1] != v[i+2]){
-            ans=i+2;
-            break;
-        }
-
-        else if(v[i+1]==v[i+2] && v[i+1] != v[i]){
-            ans=i+1;
-            break;
-         }
-    }//end for
-    cout << ans << '\n';
-
-    
-
-
-
+    }
+    cout << "NO" << '\n';
 
 
     
@@ -98,9 +84,9 @@ void solve(int tc = 0) {
 }//end solve
  
 int main() {
-	#ifdef galen_colin_local
-		auto begin = std::chrono::high_resolution_clock::now();
-	#endif
+	
+	auto begin = std::chrono::high_resolution_clock::now();
+	
 	
 	send help
  
@@ -114,12 +100,12 @@ int main() {
 	cin >> tc;
 	for (int t = 0; t < tc; t++) solve(t);
 	
-	#ifdef galen_colin_local
-		auto end = std::chrono::high_resolution_clock::now();
-		cerr << setprecision(4) << fixed;
-		cerr << "Execution time: " << std::chrono::duration_cast<std::chrono::duration<double>>(end - begin).count() << " seconds" << endl;
-	#endif
-} 
+	
+	auto end = std::chrono::high_resolution_clock::now();
+	cerr << setprecision(4) << fixed;
+	cerr << "Execution time: " << std::chrono::duration_cast<std::chrono::duration<double>>(end - begin).count() << " seconds" << endl;
+	
+}//end main
 
 
 

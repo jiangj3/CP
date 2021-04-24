@@ -1,6 +1,11 @@
 {
     "files.associations": {
         "random": "cpp",
-        "chrono": "cpp"
-    }
+        "chrono": "cpp",
+        "iostream": "cpp",
+        "algorithm": "cpp",
+        "unordered_map": "cpp",
+        "cmath": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
