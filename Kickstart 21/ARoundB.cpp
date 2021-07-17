@@ -49,18 +49,69 @@ mt19937_64 rng(std::chrono::steady_clock::now().time_since_epoch().count());
  
  
  
-ll n, m, q, k, l, r, x, y, z;
-const ll template_array_size = 1e6 + 15038;
-ll a[template_array_size];
-ll b[template_array_size];
-ll c[template_array_size];
-string s, t;
-ll ans = 0;	
+// ll n, m, q, k, l, r, x, y, z;
+// const ll template_array_size = 1e6 + 15038;
+// ll a[template_array_size];
+// ll b[template_array_size];
+// ll c[template_array_size];
+// string s, t;
+// ll ans = 0;	
  
  
  
 void solve(int tc = 0) {
-	cout << "test";
+	vector<int> v;
+	int k;
+	int n;
+	int i;
+	cin >> k;
+	cin >> n;
+	for(int i=0;i<k;i++){
+		cin >> i;
+		v.push_back(i);
+	}
+	sort(v.begin(), v.end());
+	vector<int> p;
+	
+	
+	
+	
+
+	for(int i=0;i<v.size()-1;i++){
+		p.push_back(v[i+1]-v[i]-1);
+		
+	}//end for
+
+	
+
+	p.push_back(v[0] - 1);
+	p.push_back(n-v[v.size()-1]);
+	sort(p.begin(), p.end());
+
+	for(auto x: p){
+		cout << x << " ";
+	}
+
+	double ans= -1;
+	if(p.size()==1){
+		ans = p[p.size()-1] / n;
+	}
+	if(p.size()==0){
+		ans =0;
+	}
+	if(p.size()>= 2){
+		ans = (p[p.size()-1] + p[p.size()-2]) / n;
+	}
+	
+		
+	cout << "Case #" << tc+1 << ": " << ans << '\n';
+
+	
+
+
+
+	
+
 
     
 

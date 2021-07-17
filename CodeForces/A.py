@@ -10,16 +10,15 @@ r = stdin
 
 
 def solve():
-    inputs = list(map(int,r.readline().split()))
-    n, m, num = inputs[0], inputs[1], inputs[2]
+    x = int(r.readline())
+    n = x ** (1/3)
+    
+    for i in range(1,int(n)):
+        a = x - (i**3)
+        if((a ** (1/3)) == int(a ** (1/3))):
+            return "YES"
+    return "NO"
 
-    row = num % n
-    if row==0:
-        row = n
-
-    col = math.ceil(num / n)
-    ans = (m * (row-1) ) + col
-    return ans
     
 
 

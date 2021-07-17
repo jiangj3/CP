@@ -1,34 +1,21 @@
 #include <bits/stdc++.h>
-#include <iostream>
-#include <vector>
-#include <string>
-#include <algorithm>
-#include <unordered_map>
-#include <queue>
-#include <unordered_set>
-#include <cmath>
-
+#include <chrono> 
 using namespace std;
+using namespace std::chrono; 
  
-// templates from Willian Lin:  https://github.com/tmwilliamlin168/CompetitiveProgramming/blob/master/Templates/Main.cpp
-// and Colin Galen: https://github.com/galencolin/cp-templates
- 
-#define send {ios_base::sync_with_stdio(false);}
-#define help {cin.tie(NULL);}
-#define F_OR(i, a, b, s) for (int i=(a); (s)>0?i<(b):i>(b); i+=(s))
-#define F_OR1(e) F_OR(i, 0, e, 1)
-#define F_OR2(i, e) F_OR(i, 0, e, 1)
-#define F_OR3(i, b, e) F_OR(i, b, e, 1)
-#define F_OR4(i, b, e, s) F_OR(i, b, e, s)
-#define GET5(a, b, c, d, e, ...) e
-#define F_ORC(...) GET5(__VA_ARGS__, F_OR4, F_OR3, F_OR2, F_OR1)
-#define FOR(...) F_ORC(__VA_ARGS__)(__VA_ARGS__)
+template<class T> using min_pq=priority_queue<T, vector<T>, greater<T>>;
+
+#define john {ios_base::sync_with_stdio(false);}
+#define cena {cin.tie(NULL);}
+#define pb push_back
+#define mp make_pair
+#define all(x) x.begin(), x.end()
+#define sz(x) (int)(x).size()
+#define f0r(a, b) for (long long a = 0; a < (b); ++a)
+#define F0R(i, a, b) for (int i=a; i<(b); i++)
 #define EACH(x, a) for (auto& x: a)
 #define getunique(v) {sort(v.begin(), v.end()); v.erase(unique(v.begin(), v.end()), v.end());}
 #define SUM(a) accumulate(a.begin(), a.end(), 0)
-// #define min(a,b) ((a)<(b)?(a):(b))
-// #define max(a,b) ((a)>(b)?(a):(b))
-
 typedef long long ll;
 typedef long double lld;
 typedef unsigned long long ull;
@@ -39,7 +26,11 @@ mt19937_64 rng(std::chrono::steady_clock::now().time_since_epoch().count());
 // mt19937_64 rng(61378913);
 /* usage - just do rng() */
  
-
+void usaco(string filename) {
+  // #pragma message("be careful, freopen may be wrong")
+	freopen((filename + ".in").c_str(), "r", stdin);
+	freopen((filename + ".out").c_str(), "w", stdout);
+}
 
  
 //const lld pi = 3.14159265358979323846;
@@ -49,54 +40,27 @@ mt19937_64 rng(std::chrono::steady_clock::now().time_since_epoch().count());
  
  
  
-ll n, m, q, k, l, r, x, y, z;
-const ll template_array_size = 1e6 + 15038;
-ll a[template_array_size];
-ll b[template_array_size];
-ll c[template_array_size];
-string s, t;
-ll ans = 0;	
- 
- 
- 
+ int gcd(int a, int b){
+	 if(b==0) return a;
+	 return gcd(b, a % b);
+
+ }
+
+	
+
+
 void solve(int tc = 0) {
-	int n;
-	int k;
-	cin >> n;
-	cin >> k;
-	int arr[n];
-	for(int i=0;i<n;i++){
-		cin >> arr[i];
-	}
-	int idx=0;
-	while(k>0){
-		if(arr[idx] > 0){
-			arr[idx]--;
-			k--;
-			arr[n-1]++;
-		}
+	
+	
 
-		else{
-			idx++;
-			if(idx==n) break;
-		}
-
-
-	}//end while
-    
-	for(auto x: arr){
-		cout << x << " ";
-	}
-	cout << '\n';
-
-
-    
+	
 
 
 
+	
 
 
-    
+
 
 
 }//end solve
@@ -104,19 +68,15 @@ void solve(int tc = 0) {
 int main() {
 	
 	auto begin = std::chrono::high_resolution_clock::now();
-	
-	
-	send help
- 
-	
-	
-	
-		
+	john cena
 	cout << setprecision(15) << fixed;
 								
+	
+	
 	int tc = 1;
 	cin >> tc;
 	for (int t = 0; t < tc; t++) solve(t);
+	//need testcases?
 	
 	
 	auto end = std::chrono::high_resolution_clock::now();
