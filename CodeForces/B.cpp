@@ -35,9 +35,10 @@ void usaco(string filename) {
 	freopen((filename + ".in").c_str(), "r", stdin);
 	freopen((filename + ".out").c_str(), "w", stdout);
 }
- void dbg(vector<int> v){for(auto x : v) cout << x << ' '; cout << newl;}
- void dbg(vector<vector<int>> v){for(auto row : v){for(auto x : row) cout << x<< ' ';cout << newl;}}
+
 const char newl = '\n';
+void dbg(vector<int> v){for(auto x : v) cout << x << ' '; cout << newl;}
+void dbg(vector<vector<int>> v){for(auto row : v){for(auto x : row) cout << x<< ' ';cout << newl;}}
 //const lld pi = 3.14159265358979323846;
 //const ll mod = 1000000007;
 //const ll mod = 998244353;

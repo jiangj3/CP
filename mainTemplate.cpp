@@ -25,6 +25,13 @@ typedef unsigned long long ull;
 mt19937_64 rng(std::chrono::steady_clock::now().time_since_epoch().count());
 // mt19937_64 rng(61378913);
 /* usage - just do rng() */
+
+
+const char newl = '\n';
+//const lld pi = 3.14159265358979323846;
+//const ll mod = 1000000007;
+//const ll mod = 998244353;
+// ll mod;
 void dbg(vector<int> v){for(auto x : v) cout << x << ' '; cout << newl;}
 void dbg(vector<vector<int>> v){for(auto row : v){for(auto x : row) cout << x<< ' ';cout << newl;}}
 void usaco(string filename) {
@@ -33,11 +40,7 @@ void usaco(string filename) {
 	freopen((filename + ".out").c_str(), "w", stdout);
 }
 
-  const char newl = '\n';
-//const lld pi = 3.14159265358979323846;
-//const ll mod = 1000000007;
-//const ll mod = 998244353;
-// ll mod;
+
  
 
 
