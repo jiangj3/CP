@@ -39,6 +39,10 @@
         "unordered_map": "cpp",
         "unordered_set": "cpp",
         "vector": "cpp",
-        "forward_list": "cpp"
-    }
+        "forward_list": "cpp",
+        "system_error": "cpp",
+        "regex": "cpp",
+        "limits": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Enabled"
 }

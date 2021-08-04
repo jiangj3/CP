@@ -5,8 +5,12 @@ using namespace std::chrono;
  
 template<class T> using min_pq=priority_queue<T, vector<T>, greater<T>>;
 
+
 #define john {ios_base::sync_with_stdio(false);}
 #define cena {cin.tie(NULL);}
+
+
+
 #define pb push_back
 #define mp make_pair
 #define all(x) x.begin(), x.end()
@@ -31,8 +35,9 @@ void usaco(string filename) {
 	freopen((filename + ".in").c_str(), "r", stdin);
 	freopen((filename + ".out").c_str(), "w", stdout);
 }
-
- 
+ void dbg(vector<int> v){for(auto x : v) cout << x << ' '; cout << newl;}
+ void dbg(vector<vector<int>> v){for(auto row : v){for(auto x : row) cout << x<< ' ';cout << newl;}}
+const char newl = '\n';
 //const lld pi = 3.14159265358979323846;
 //const ll mod = 1000000007;
 //const ll mod = 998244353;
@@ -46,18 +51,87 @@ void usaco(string filename) {
 
  }
 
-	
 
 
 void solve(int tc = 0) {
-	
-	
+	int n, m;
+	cin >> n >> m;
+	int weaker[n]= {0};
+	int deg[n] = {0};
+	int ans=0;
+
 
 	
 
+	//remember nodes are indexed 1
+	int start, end;
+	f0r(a, m){
+		cin >> start >> end;
+		weaker[max(start, end)-1]++;
+		deg[start-1]++;
+		deg[end-1]++;
 
-
+	}
 	
+	ans=0;
+	f0r(i, n) if(weaker[i] == deg[i]) ans++;
+
+
+	int q;
+	cin >> q;
+	int qType =0;
+	f0r(a, q){
+		cin >> qType;
+
+//case 1
+		if(qType ==1){
+			cin >> start >> end;
+			if(weaker[start-1] == deg[start-1]) ans--;
+			if(weaker[end-1]==deg[end-1]) ans--;
+			
+			weaker[max(start, end)-1]++;
+			deg[start-1]++;
+			deg[end-1]++;
+
+			if(weaker[start-1]==deg[start-1]) ans++;
+			if(weaker[end-1] == deg[end-1]) ans++;
+			
+
+
+
+		}//end if
+
+
+//case 2
+
+		else if(qType ==2){
+			cin >> start >> end;
+			if(weaker[start-1] == deg[start-1]) ans--;
+			if(weaker[end-1]==deg[end-1]) ans--;
+			weaker[max(start, end)-1]--;
+			deg[start-1]--;
+			deg[end-1]--;
+			if(weaker[start-1]==deg[start-1]) ans++;
+			if(weaker[end-1] == deg[end-1]) ans++;
+
+
+
+		}//end else if
+
+		else{
+			
+			cout << ans << newl;
+
+
+		}//end else
+
+
+
+
+
+	}//end process query
+
+
 
 
 
@@ -74,7 +148,7 @@ int main() {
 	
 	
 	int tc = 1;
-	cin >> tc;
+	//cin >> tc;
 	for (int t = 0; t < tc; t++) solve(t);
 	//need testcases?
 	
