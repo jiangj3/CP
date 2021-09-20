@@ -1,2 +1,2 @@
 # CP
-CP Algo/ Theorms/ Notes
+CP Algo/ Theorems/ Notes
